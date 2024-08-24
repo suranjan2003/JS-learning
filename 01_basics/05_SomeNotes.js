@@ -1,6 +1,6 @@
 
 //************* trimming extra space *************
-/*
+
 const name = "  suranjan karmakar"
 
 //before trim
@@ -8,7 +8,7 @@ console.log(name)
 
 //after trim
 console.log(name.trim())
-*/
+
 
 // ************* changing some elements inside *******
 /*
@@ -19,6 +19,7 @@ console.log(name.trim())
 */
 
  //********* Numbers *********************/
+ /*
 // method 1 of defining number
 const score = 400
 console.log(score)             // observe output
@@ -29,4 +30,4 @@ console.log(balance)            // observe output
 console.log(balance.toString().length)  // converted to string 
                                         //i.e now we can use all the properties of string in our number too
 console.log(balance.toFixed(2))    // decimal places required
-                                    
+*/
