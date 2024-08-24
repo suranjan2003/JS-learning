@@ -1,6 +1,6 @@
 
 //************* trimming extra space *************
-
+/*
 const name = "  suranjan karmakar"
 
 //before trim
@@ -8,7 +8,7 @@ console.log(name)
 
 //after trim
 console.log(name.trim())
-
+*/
 
 // ************* changing some elements inside *******
 /*
@@ -30,4 +30,16 @@ console.log(balance)            // observe output
 console.log(balance.toString().length)  // converted to string 
                                         //i.e now we can use all the properties of string in our number too
 console.log(balance.toFixed(2))    // decimal places required
+
+const val = 1000000
+console.log(val.toLocaleString('en-IN'));  //we will get  10,00,000
 */
+
+
+/* some other notes */
+const gamename = new String('gitesh')
+console.log(gamename)
+console.log(gamename.toUpperCase())
+let len = gamename.length
+console.log(len)
+console.log(typeof len)

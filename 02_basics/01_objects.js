@@ -21,7 +21,7 @@ const regularUser = {
 
 
 // objects  under array
-/*
+
 const user = [
     {
         id : "A",
@@ -35,27 +35,24 @@ const user = [
         // like this we can insert as many objects as we want
     }
 ]
-*/
-
-
 
 
 // object literals
-
+/*
 const JsUser = {
     name: "suranjan",
     "full name": "suranjan karmakar",
     age: 18,
     location: "Jaipur"
-}
+}*/
 //console.log(JsUser.name)         // 1st method
 //console.log(JsUser["name"])        // 2nd method
 
 // but the key "full name" can be accesed by 2nd method only
 //console.log(JsUser["full name"])
 
-
+/*
 console.log(JsUser.name);     // no destructuring
 
 const {name} = JsUser           //destructuring
-console.log(name);
+console.log(name);*/

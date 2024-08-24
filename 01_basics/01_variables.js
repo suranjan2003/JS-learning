@@ -10,7 +10,11 @@ accCity = "Jaipur" // we can define variables like this also but this is not a g
 
 //accId = 2  // not allowed to change value of constant
 
-console.log(accId);
+//console.log(accId);
 
 // print the values in form of table
-console.table([accId, accEmail, accPassword, accCity])
+//console.table([accId, accEmail, accPassword, accCity])
+
+const arr1 = [0,1,2,3,5]
+const arr2 = ['shaktiman', 'naagraj', 'jodha', 'akbar']
+console.table(arr1,arr2)
