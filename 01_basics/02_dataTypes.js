@@ -5,3 +5,10 @@
 console.log(3+3);
 console.log("hitesh");
 console.log(typeof "ram");
+
+
+/*
+javascript documentation online resource
+ECMA
+link :- https://tc39.es/ecma262/
+*/
