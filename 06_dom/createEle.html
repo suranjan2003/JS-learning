@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(59, 69, 87); color: aliceblue;">
+    
+</body>
+<script>
+    function make(eType, cName){   // we can add more parameters to it
+        const div = document.createElement(eType)
+        console.log(div)
+        div.className = cName
+        div.id = Math.round(Math.random()*10+1)
+        div.setAttribute('title','generated title')
+        const sty = div.style
+        sty.backgroundColor = 'green'
+        sty.padding = '12px'
+        sty.borderRadius = '10px'
+        sty.fontFamily = "Arial Narrow"
+        //div.innerHTML = 'chai aur code'
+        const addtext = document.createTextNode('chai aur code') // more optimized way
+        div.appendChild(addtext)
+        document.body.appendChild(div) // to attach the created element to the website page
+    }
+    make("div","main") 
+</script>
+</html>
