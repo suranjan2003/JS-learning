@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(17, 17, 57); color: antiquewhite;">
+    <ul class="language">
+        <li>JS</li>
+    </ul>
+</body>
+<script>
+    function addlang(langname){   // this logic is not optimal
+        const li=document.createElement('li')
+        li.innerHTML = `${langname}`
+        //console.log(li)
+        //adding to the page
+        document.querySelector('.language').appendChild(li)
+    }
+    addlang('python')
+    addlang('C++')
+
+    function addLangOptimally(langname){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLangOptimally('java')
+
+    //editing value method 1
+    function edit1(rank,newLanguage){
+        const secondlang = document.querySelector(`li:nth-child(${rank})`)
+        //secondlang.innerHTML = 'Golang' // but this approach is not optimal
+        const newli=document.createElement('li')
+        newli.textContent = newLanguage
+        secondlang.replaceWith(newli)
+    }
+    edit1(1,'mojo')  //replacing 1st laguange
+
+    //editing value method 1
+    function editOptimally(rank,newLanguage){
+        const secondlang = document.querySelector(`li:nth-child(${rank})`)
+        secondlang.outerHTML = `<li>${newLanguage}</li>`
+    }
+    editOptimally(3,'sumanta')  // replacing 3rd language
+
+    function deleting(rank){
+        document.querySelector(`li:nth-child(${rank})`).remove()
+    }
+    //deleting(3)   // 3rd lang will be deleted
+</script>
+</html>
