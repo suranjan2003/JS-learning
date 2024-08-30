@@ -51,3 +51,26 @@ form.addEventListener('submit', (e)=>{
   }
 })
 ```
+## proj 3
+```javascript
+const clock = document.getElementById('clock')
+
+setInterval(()=>{
+
+  const now = new Date()
+
+  // ********** method 1 **************
+  // const hr = now.getHours()
+  // const mint = now.getMinutes()
+  // if(hr<10){
+  //   clock.innerHTML = '0' + hr + ' : ' + mint
+  // }
+  // else {
+  //   clock.innerHTML = hr + ' : ' + mint
+  // }
+  
+  // ********** method 2 **************
+  clock.innerHTML = now.toLocaleTimeString()
+
+}, 1000)
+```
