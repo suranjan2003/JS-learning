@@ -18,3 +18,36 @@ buttons.forEach((button)=>{
   })
 })
 ```
+## proj 2
+```javascript
+const form = document.querySelector('form')
+//console.log(form)
+form.addEventListener('submit', (e)=>{
+  e.preventDefault()    // comment out it and click submit button, u can observe the diff
+  const height = parseInt(document.querySelector('#height').value)
+  const weight = parseInt(document.querySelector('#weight').value)
+  const results = document.querySelector('#results')
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML = `Please give a valid height ${height}`;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = `Please give a valid weight ${weight}`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    const comp = document.getElementById('weight-guide')
+    const ele = comp.getElementsByTagName('p')
+    if(bmi > 24.9){
+      results.innerHTML = `<span>${bmi}</span><br>`+
+                          `<span style="color: red;">${ele[2].innerText}</span>`;
+    }
+    else if(bmi<=24.9 && bmi>=18.6){
+      results.innerHTML = `<span>${bmi}</span><br>`+
+                          `<span style="color: green;">${ele[1].innerText}</span>`;
+    }
+    else{
+      results.innerHTML = `<span>${bmi}</span><br>`+
+                          `<span style="color: blue;">${ele[0].innerText}</span>`;
+    }
+  }
+})
+```
