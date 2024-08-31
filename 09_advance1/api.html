@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bod">
+    <div class="container" style="display: block; width: 150px;">
+        <div id="ava" class="avatar" style="height: 150px; width: 150px; background-size: contain;"></div>
+        <p class="followers" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;position: relative; margin-inline-start: 10%;"></p>
+    </div>
+</body>
+
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestURL)   // open is parameterised
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState == 4){
+            const body = document.getElementById('bod')
+            const cont = body.getElementsByClassName('container')[0]
+            const data = JSON.parse(this.responseText)
+            cont.getElementsByClassName('avatar')[0].style.backgroundImage = `url(${data.avatar_url})`;
+            cont.getElementsByClassName('followers')[0].innerHTML = 'followers: '+data.followers
+        }
+    }
+    xhr.send()  // open is called
+</script>
+</html>
