@@ -171,3 +171,90 @@ function newGame() {
 
 
 ```
+
+## proj 6 (unlimited bg color changer)
+```javascript
+
+//******method 1**** by defining a set of color
+
+let animation
+const colors = ['green', 'yellow', 'blue', 'purple', 'orange', 'black', 'blue', 'green', 'yellow', 'white', 'violet']
+
+document.querySelector('#start').addEventListener('click', ()=>{
+  // to clear any exixsting animation if present
+  clearInterval(animation)
+
+  animation = setInterval(()=>{
+    const body = document.querySelector('body')
+    body.style.backgroundColor = colors[parseInt(Math.random()*10)]
+  }, 1000)
+})
+
+document.querySelector('#stop').addEventListener('click', ()=>{
+  clearInterval(animation)
+  animation = null  // to avoid over writting the animation
+})
+
+
+//**** method 2***** by making a random color generator function
+
+let animation
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+document.querySelector('#start').addEventListener('click', ()=>{
+  // to clear any exixsting animation if present
+  clearInterval(animation)
+
+  animation = setInterval(()=>{
+    const body = document.querySelector('body')
+    body.style.backgroundColor = randomColor()
+  }, 1000)
+})
+
+document.querySelector('#stop').addEventListener('click', ()=>{
+  clearInterval(animation)
+})
+
+
+//*******method 3**** exact code from chai aur code
+
+//generate a random color
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+```

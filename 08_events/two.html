@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="start">start animation</button>
+    <button id="stop">stop animation</button>
+</body>
+<script>
+    // document.getElementById('stop').addEventListener('click',()=>{
+    //     alert('buttton clicked')
+    // })
+
+    // setTimeout(()=>{
+    //     alert('time is out')
+    // }, 2000)  // takes a pause of 2s and then executes the code inside
+
+    // setInterval(()=>{
+    //     console.log("2s passed")
+    // },2000) // executes the code repeatedly after every 2s
+    
+
+    // animating the heading (changing the heading every 3s)
+    let animation;
+
+    document.querySelector('#start').addEventListener('click', ()=>{
+        // Clear any existing interval if the start button is clicked multiple times
+        clearInterval(animation)
+
+        animation = setInterval(()=>{
+            const currentText = document.querySelector('h1').innerText
+            document.querySelector('h1').innerHTML = currentText === 'chai aur code' ? 'js learning platform' : 'chai aur code';
+        },3000) 
+    });
+
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(animation);
+    });
+</script>
+</html>
